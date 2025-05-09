@@ -126,7 +126,7 @@
 
                         </ul>
                     </li>
-                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="{{ route('about-us') }}">About Us</a></li>
                     <li class="menu-item-has-children">
                         <a href="#">Service</a>
                         <ul class="sub-menu">
@@ -151,7 +151,7 @@
                             <li><a href="team.html">Team</a></li>
                             <li><a href="team-details.html">Team Details</a></li>
                             <li><a href="project.html">project</a></li>
-                            <li><a href="project-details.html">project Details</a></li>
+                            <li><a href="#!">project Details</a></li>
                             <li><a href="faq.html">Faq Page</a></li>
                             <li><a href="price.html">Price Package</a></li>
                             <li><a href="error.html">Error Page</a></li>
@@ -167,7 +167,7 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="contact.html">Contact us</a>
+                        <a href="{{ route('contact-us') }}">Contact us</a>
                     </li>
                 </ul>
             </div>

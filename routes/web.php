@@ -7,9 +7,13 @@ use App\Http\Controllers\Auth\LoginNewController;
 use App\Http\Controllers\DahsboardController;
 use App\Http\Controllers\ProductCategoryController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SettingController;
 use App\Models\Product;
 use App\Models\ProductCategory;
+use App\Models\Project;
+use App\Models\Service;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -28,13 +32,17 @@ use Illuminate\Support\Facades\Auth;
 // Front Web
 // ============================================================
 Route::get('/', function () {
-    return view('front-view.home.index');
+    $services = Service::orderBy('id', 'ASC')->get();
+    $project = Project::orderBy('id', 'ASC')->get();
+
+    return view('front-view.home.index', compact('services', 'project'));
 })->name('home');
 Route::get('/about-us', function () {
     return view('front-view.about-us.index');
 })->name('about-us');
 Route::get('/service', function () {
-    return view('front-view.service.index');
+    $services = Service::orderBy('id', 'ASC')->get();
+    return view('front-view.service.index', compact('services'));
 })->name('service');
 
 Route::get('/products', function (Request $request) {
@@ -50,7 +58,9 @@ Route::get('/products', function (Request $request) {
 })->name('products');
 
 Route::get('/project', function () {
-    return view('front-view.project.index');
+    $project = Project::orderBy('id', 'ASC')->get();
+
+    return view('front-view.project.index', compact('project'));
 })->name('project');
 Route::get('/contact-us', function () {
     return view('front-view.contact-us.index');
@@ -84,6 +94,8 @@ Route::prefix('cms')->name('cms.')->group(function () {
             'users' => UserController::class,
             'product' => ProductController::class,
             'product-category' => ProductCategoryController::class,
+            'service' => ServiceController::class,
+            'project' => ProjectController::class,
         ]);
 
         // USER PROFILE ROUTE
@@ -98,6 +110,12 @@ Route::prefix('cms')->name('cms.')->group(function () {
         Route::get('/product-list', [ProductController::class, 'getDataProduct']);
         // Product List
         Route::get('/product-category-list', [ProductCategoryController::class, 'getDataProductCategory']);
+        // =======================================================================
+        // Service List
+        Route::get('/service-list', [ServiceController::class, 'getData']);
+        // =======================================================================
+        // Project List
+        Route::get('/project-list', [ProjectController::class, 'getData']);
         // =======================================================================
     });
 });

@@ -4,7 +4,7 @@
             <div class="row justify-content-between align-items-center">
                 <div class="col-auto">
                     <div class="header-logo">
-                        <a href="index.html"><img src="{{ asset('logo-admiral.png') }}" alt="aDMIRAL"></a>
+                        <a href="index.html"><img src="{{ asset('logo-admiral.png') }}" alt="ADMIRAL"></a>
                     </div>
                 </div>
                 <div class="col-auto d-none d-lg-block sticky-d-none">
@@ -20,7 +20,7 @@
                         </div>
                         <div class="info-card">
                             <div class="info-card_icon">
-                                <img src="{{ asset('assets-front/img/icon/call2.svg') }}" alt="">
+                                <i class="fa-light fa-envelope-dot"></i>
                             </div>
                             <div class="info-card_content">
                                 <p class="info-card_text">Email Us:</p>
@@ -29,7 +29,7 @@
                         </div>
                         <div class="info-card">
                             <div class="info-card_icon">
-                                <img src="{{ asset('assets-front/img/icon/call2.svg') }}" alt="">
+                                <i class="fa-light fa-location-dot"></i>
                             </div>
                             <div class="info-card_content">
                                 <span class="info-card_label">Location Address:</span>

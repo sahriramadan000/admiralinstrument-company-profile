@@ -56,7 +56,7 @@
         <li class="nav-item">
             <a class="nav-link" href="{{ route('cms.product-category.index') }}">
                 <span class="nav-icon">
-                    <iconify-icon icon="solar:box-broken"></iconify-icon>
+                    <iconify-icon icon="solar:checklist-minimalistic-broken"></iconify-icon>
                 </span>
                 <span class="nav-text"> Kategori Produk </span>
             </a>
@@ -68,6 +68,24 @@
                     <iconify-icon icon="solar:box-broken"></iconify-icon>
                 </span>
                 <span class="nav-text"> Produk </span>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="{{ route('cms.service.index') }}">
+                <span class="nav-icon">
+                    <iconify-icon icon="solar:crown-star-broken"></iconify-icon>
+                </span>
+                <span class="nav-text"> Layanan </span>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="{{ route('cms.project.index') }}">
+                <span class="nav-icon">
+                    <iconify-icon icon="solar:medal-ribbons-star-broken"></iconify-icon>
+                </span>
+                <span class="nav-text"> Proyek </span>
             </a>
         </li>
 

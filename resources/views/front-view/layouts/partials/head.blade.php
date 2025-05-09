@@ -81,4 +81,19 @@
     .thumb-img.active {
         border-color: #ff4d4f;
     }
+    .img-service {
+        width: 100% !important;
+        height: 180px !important;
+        object-fit: contain !important;
+        object-position: center !important;
+        border-radius: 20px !important;
+        background-color: #f8f8f8 !important;
+    }
+    .img-project {
+        width: 100% !important;
+        height: 400px !important;
+        object-fit: cover !important;
+        object-position: center !important;
+        background-color: #f8f8f8 !important;
+    }
 </style>

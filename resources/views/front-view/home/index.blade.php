@@ -33,7 +33,7 @@
                                     Cutting-edge <span class="hero-text">Environmental Solutions</span>
                                 </h1>
                                 <div class="btn-group" data-ani="slideinup" data-ani-delay="0.6s">
-                                    <a href="about.html" class="th-btn style1 th-style th-icon">Discover More<i class="fa-regular fa-arrow-right ms-2"></i></a>
+                                    <a href="{{ route('about-us') }}" class="th-btn style1 th-style th-icon">Discover More<i class="fa-regular fa-arrow-right ms-2"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -62,7 +62,7 @@
                                     International <span class="hero-text">Quality Assurance</span>
                                 </h1>
                                 <div class="btn-group" data-ani="slideinup" data-ani-delay="0.6s">
-                                    <a href="about.html" class="th-btn style1 th-style th-icon">Discover More<i class="fa-regular fa-arrow-right ms-2"></i></a>
+                                    <a href="{{ route('about-us') }}" class="th-btn style1 th-style th-icon">Discover More<i class="fa-regular fa-arrow-right ms-2"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -91,7 +91,7 @@
                                     Reliable <span class="hero-text">After-Sales Service</span>
                                 </h1>
                                 <div class="btn-group" data-ani="slideinup" data-ani-delay="0.6s">
-                                    <a href="about.html" class="th-btn style1 th-style th-icon">Discover More<i class="fa-regular fa-arrow-right ms-2"></i></a>
+                                    <a href="{{ route('about-us') }}" class="th-btn style1 th-style th-icon">Discover More<i class="fa-regular fa-arrow-right ms-2"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -189,7 +189,7 @@
                         </div>
                     </div>
                     <div>
-                        <a href="about.html" class="th-btn th-style th-icon">More About Us <i class="fa-regular fa-arrow-right ms-2"></i></a>
+                        <a href="{{ route('about-us') }}" class="th-btn th-style th-icon">More About Us <i class="fa-regular fa-arrow-right ms-2"></i></a>
                     </div>
                 </div>
             </div>
@@ -241,54 +241,38 @@
             <div class="slider-area">
                 <div class="swiper th-slider has-shadow" id="serviceSlider4" data-slider-options='{"breakpoints":{"0":{"slidesPerView":1},"576":{"slidesPerView":"1"},"768":{"slidesPerView":"2"},"992":{"slidesPerView":"3"},"1200":{"slidesPerView":"4"}}}'>
                     <div class="swiper-wrapper">
+                        @forelse ($services as $service)
                         <div class="swiper-slide">
                             <div class="service-item th-ani">
                                 <div class="service-item_img">
-                                    <img src="{{ asset('assets-front/img/service/service-1.jpg')}}" alt="Icon">
+                                    <img src="{{ asset('assets/img/service/'. $service->image ?? '-')}}" class="img-service" alt="Service">
                                 </div>
                                 <div class="service-item_content">
-                                    <h3 class="box-title"><a href="service-details.html">Process Gas Analyzer</a></h3>
-                                    <p class="service-item_text">Advanced analyzers for coal mill, combustion, and metering processes.</p>
-                                    <a href="service-details.html" class="icon-btn th-icon"><i class="fa-regular fa-arrow-right"></i></a>
+                                    <h3 class="box-title"><a href="#!">{{ $service->name }}</a></h3>
+                                    <p class="service-item_text">{{ $service->description }}</p>
+                                    {{-- <a href="#!" class="icon-btn th-icon"><i class="fa-regular fa-arrow-right"></i></a> --}}
                                 </div>
                             </div>
                         </div>
+                        @empty
+                            <h3>Service Not Found!</h3>
+                        @endforelse
+                        @forelse ($services as $service)
                         <div class="swiper-slide">
                             <div class="service-item th-ani">
                                 <div class="service-item_img">
-                                    <img src="{{ asset('assets-front/img/service/service-2.jpg')}}" alt="Icon">
+                                    <img src="{{ asset('assets/img/service/'. $service->image ?? '-')}}" class="img-service" alt="Service">
                                 </div>
                                 <div class="service-item_content">
-                                    <h3 class="box-title"><a href="service-details.html">CEMS Analyzer</a></h3>
-                                    <p class="service-item_text">Solutions including UV-DOAS, NDIR, TDLAS, Dust Analyzer, and Flowmeter.</p>
-                                    <a href="service-details.html" class="icon-btn th-icon"><i class="fa-regular fa-arrow-right"></i></a>
+                                    <h3 class="box-title"><a href="#!">{{ $service->name }}</a></h3>
+                                    <p class="service-item_text">{{ $service->description }}</p>
+                                    {{-- <a href="#!" class="icon-btn th-icon"><i class="fa-regular fa-arrow-right"></i></a> --}}
                                 </div>
                             </div>
                         </div>
-                        <div class="swiper-slide">
-                            <div class="service-item th-ani">
-                                <div class="service-item_img">
-                                    <img src="{{ asset('assets-front/img/service/service-3.jpg')}}" alt="Icon">
-                                </div>
-                                <div class="service-item_content">
-                                    <h3 class="box-title"><a href="service-details.html">Ambient Gas Analyzer</a></h3>
-                                    <p class="service-item_text">Monitoring SO2, NOx, CO, O3 with high-precision analyzers and calibrators.</p>
-                                    <a href="service-details.html" class="icon-btn th-icon"><i class="fa-regular fa-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="service-item th-ani">
-                                <div class="service-item_img">
-                                    <img src="{{ asset('assets-front/img/service/service-4.jpg')}}" alt="Icon">
-                                </div>
-                                <div class="service-item_content">
-                                    <h3 class="box-title"><a href="service-details.html">Water Quality Monitoring</a></h3>
-                                    <p class="service-item_text">Comprehensive WQMS including pH, BOD, COD, turbidity, and more.</p>
-                                    <a href="service-details.html" class="icon-btn th-icon"><i class="fa-regular fa-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
+                        @empty
+
+                        @endforelse
                     </div>
                 </div>
                 <button data-slider-prev="#serviceSlider4" class="slider-arrow slider-prev"><i class="far fa-arrow-left"></i></button>
@@ -569,7 +553,7 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="cta-group justify-content-lg-end justify-content-center">
-                        <a href="contact.html" class="th-btn style1 th-style th-icon">Consult With Us Today<i class="fa-regular fa-arrow-right ms-2"></i></a>
+                        <a href="{{ route('contact-us') }}" class="th-btn style1 th-style th-icon">Consult With Us Today<i class="fa-regular fa-arrow-right ms-2"></i></a>
                     </div>
                 </div>
             </div>
@@ -602,69 +586,36 @@
             <div class="slider-area">
                 <div class="swiper th-slider has-shadow project-slider4" id="projectSlider4" data-slider-options='{"paginationType":"fraction","centeredSlides":true,"breakpoints":{"0":{"slidesPerView":1},"576":{"slidesPerView":"1"},"768":{"slidesPerView":"2"},"992":{"slidesPerView":"3"},"1200":{"slidesPerView":"3"},"1400":{"slidesPerView":"3"}}}'>
                     <div class="swiper-wrapper">
+                        @forelse ($project as $proj)
                         <div class="swiper-slide">
                             <div class="project-item style2">
                                 <div class="project-item-img">
-                                    <img src="{{ asset('assets-front/img/project/project_4_1.jpg')}}" alt="project image">
+                                    <img src="{{ asset('assets/img/project/'. $proj->image)}}" alt="project image">
                                 </div>
                                 <div class="project-item-content">
-                                    <h3 class="box-title"><a href="project-details.html">Bedroom Tailing</a></h3>
-                                    <p class="project-subtitle">Building Renovation</p>
+                                    <h3 class="box-title"><a href="#!">{{ $proj->category ?? '-' }}</a></h3>
+                                    <p class="project-subtitle">{{ $proj->name ?? '-' }}</p>
                                 </div>
                             </div>
                         </div>
-
+                        @empty
+                            <h3>Project Not Found!</h3>
+                        @endforelse
+                        @forelse ($project as $proj)
                         <div class="swiper-slide">
                             <div class="project-item style2">
                                 <div class="project-item-img">
-                                    <img src="{{ asset('assets-front/img/project/project_4_2.jpg')}}" alt="project image">
+                                    <img src="{{ asset('assets/img/project/'. $proj->image)}}" alt="project image">
                                 </div>
                                 <div class="project-item-content">
-                                    <h3 class="box-title"><a href="#!">Industrial Design</a></h3>
-                                    <p class="project-subtitle">Industrial</p>
+                                    <h3 class="box-title"><a href="#!">{{ $proj->category ?? '-' }}</a></h3>
+                                    <p class="project-subtitle">{{ $proj->name ?? '-' }}</p>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="swiper-slide">
-                            <div class="project-item style2">
-                                <div class="project-item-img">
-                                    <img src="{{ asset('assets-front/img/project/project_4_3.jpg')}}" alt="project image">
-                                </div>
-                                <div class="project-item-content">
-                                    <h3 class="box-title"><a href="project-details.html">Architect Design</a></h3>
-                                    <p class="project-subtitle">Architect</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="project-item style2">
-                                <div class="project-item-img">
-                                    <img src="{{ asset('assets-front/img/project/project_4_1.jpg')}}" alt="project image">
-                                </div>
-                                <div class="project-item-content">
-                                    <h3 class="box-title"><a href="project-details.html">Residential Design</a></h3>
-                                    <p class="project-subtitle">Residential</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="project-item style2">
-                                <div class="project-item-img">
-                                    <img src="{{ asset('assets-front/img/project/project_4_2.jpg')}}" alt="project image">
-                                </div>
-                                <div class="project-item-content">
-                                    <h3 class="box-title"><a href="project-details.html">Contemporary Villa</a></h3>
-                                    <p class="project-subtitle">Contemporary</p>
-                                </div>
-                            </div>
-                        </div>
-
+                        @empty
+                        @endforelse
                     </div>
-                    <div class="slider-pagination"></div>
-                    <div class="border-line"></div>
                 </div>
             </div>
 

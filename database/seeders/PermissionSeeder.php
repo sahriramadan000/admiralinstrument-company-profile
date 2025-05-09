@@ -49,6 +49,18 @@ class PermissionSeeder extends Seeder
             'product-create',
             'product-edit',
             'product-delete',
+
+            // Service
+            'service-view',
+            'service-create',
+            'service-edit',
+            'service-delete',
+
+            // Project
+            'project-view',
+            'project-create',
+            'project-edit',
+            'project-delete',
         ];
 
         // Looping and Inserting Array's Permissions into Permission Table

@@ -2,10 +2,10 @@
 /*
 Template Name: Kotar
 Template URL: https://themeholy.com/html/kotar/
-Description: Kotar Construction Service HTML Template 
+Description: Kotar Construction Service HTML Template
 Author: themeholy
 Author URI: https://themeforest.net/user/themeholy
-Version: 1.0.0 
+Version: 1.0.0
 */
 /*=================================
     CSS Index Here
@@ -35,7 +35,7 @@ Version: 1.0.0
     3.8. Text Color
     3.9. Overlay
     3.10. Animation
-    
+
 04. Template Style
     4.1. Widget
     4.2. Header
@@ -45,7 +45,7 @@ Version: 1.0.0
     4.6. Blog
     4.7. Comments
     4.8. Hero Area
-    4.9. Error    
+    4.9. Error
     4.00. Popup Search
     4.00. Popup Side Menu
     4.00. Wocommerce
@@ -71,7 +71,7 @@ Version: 1.0.0
     4.00. CTA
     4.00. Deal
     4.00. Tab Menu
-    4.00. Particle 
+    4.00. Particle
 
 05. Spacing
 
@@ -87,7 +87,7 @@ Version: 1.0.0
 /*------------------- 1.2. Function -------------------*/
 /*------------------- 1.3. Variable-------------------*/
 :root {
-  --theme-color: #F68A0A;
+  --theme-color: #3988ff;
   --title-color: #0E121D;
   --body-color: #4D5765;
   --smoke-color: #F8F8F8;
@@ -1571,7 +1571,7 @@ textarea.is-invalid {
     03. Utilities
 ==================================*/
 /*------------------- 3.1. Preloader -------------------*/
-/*======================= 
+/*=======================
     Preloader
 =======================*/
 .preloader {
@@ -2297,7 +2297,7 @@ textarea.is-invalid {
 }
 
 .box-title {
-  font-size: 24px;
+  font-size: 20px;
   line-height: 1.417;
   font-weight: 600;
   margin-top: -0.32em;
@@ -21727,6 +21727,10 @@ span.select2-selection.select2-selection--single:focus {
   color: var(--theme-color);
 }
 
+.service-box:hover .service-box_text {
+  color: var(--white-color);
+}
+
 .service-box:hover .line-btn:before {
   background-color: var(--theme-color);
 }
@@ -22566,7 +22570,7 @@ span.select2-selection.select2-selection--single:focus {
   line-height: 90px;
   text-align: center;
   border-radius: 50%;
-  background-color: rgba(255, 102, 0, 0.1);
+  background-color: rgba(0, 89, 255, 0.1);
   margin-bottom: 20px;
 }
 
