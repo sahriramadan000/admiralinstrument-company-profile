@@ -6,7 +6,11 @@
 </head>
 
 <body>
-
+    <a href="https://api.whatsapp.com/send?phone=6285715919303&text=" class="btn-whatsapp">
+        <div class="section-whatsapp">
+            <img src="{{ asset('whatsapp.png') }}" alt="whatsapp">
+        </div>
+    </a>
     <!--********************************
    		Code Start From Here
 	******************************** -->

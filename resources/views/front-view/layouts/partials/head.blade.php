@@ -48,6 +48,38 @@
 <link rel="stylesheet" href="{{ asset('assets-front/css/style.css')}}">
 
 <style>
+    .btn-whatsapp {
+        z-index: 4;
+        width: 3.25rem;
+        height: 3.25rem;
+        background-color: #25D366;
+        color: #fff;
+        text-decoration: none;
+        position: fixed;
+        bottom: 5.5rem;
+        right: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 100%;
+        transition: transform 0.2s;
+    }
+    @keyframes vibrate {
+        0% { transform: translate(0); }
+        20% { transform: translate(-1px, 1px); }
+        40% { transform: translate(-1px, -1px); }
+        60% { transform: translate(1px, 1px); }
+        80% { transform: translate(1px, -1px); }
+        100% { transform: translate(0); }
+    }
+
+    .btn-whatsapp:hover {
+        animation: vibrate 0.3s linear infinite;
+    }
+
+    .section-whatsapp {
+        position: relative;
+    }
     .main-img {
         width: 100% !important;
         height: 350px !important;
