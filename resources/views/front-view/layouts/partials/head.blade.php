@@ -115,7 +115,7 @@
     }
     .img-service {
         width: 100% !important;
-        height: 180px !important;
+        height: 100% !important;
         object-fit: contain !important;
         object-position: center !important;
         border-radius: 20px !important;

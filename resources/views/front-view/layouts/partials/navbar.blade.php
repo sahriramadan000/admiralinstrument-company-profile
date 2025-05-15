@@ -4,7 +4,7 @@
             <div class="row justify-content-between align-items-center">
                 <div class="col-auto">
                     <div class="header-logo">
-                        <a href="index.html"><img src="{{ asset('logo-admiral.png') }}" alt="ADMIRAL"></a>
+                        <a href="#!"><img src="{{ asset('logo-admiral.png') }}" alt="ADMIRAL"></a>
                     </div>
                 </div>
                 <div class="col-auto d-none d-lg-block sticky-d-none">
